@@ -22,29 +22,30 @@ from WMCore.Configuration import Configuration
 
 config = config()
 
-submitVersion ="2018Data_1"
+submitVersion ="2019_1_15"
 doEleTree = 'doEleID=True'
 doPhoTree = 'doPhoID=True'
 #doHLTTree = 'doTrigger=False'
 #calibEn   = 'useCalibEn=False'
 
-mainOutputDir = '/store/group/phys_egamma/soffi/TnP/ntuples_06152018/%s' % submitVersion
+mainOutputDir = '/store/user/dgiljano/TnP/2017_data_MC/%s' % submitVersion
 
 config.General.transferLogs = False
 
 config.JobType.pluginName  = 'Analysis'
 
 # Name of the CMSSW configuration file
-config.JobType.psetName  = '/afs/cern.ch/work/s/soffi/EGM-WORK/CMSSW-1011-2018DataTnP/src/EgammaAnalysis/TnPTreeProducer/python/TnPTreeProducer_cfg.py'
+config.JobType.psetName  = '/scratch/giljanovic/CMSSW_10_2_9/src/EgammaAnalysis/TnPTreeProducer/python/TnPTreeProducer_cfg.py'
 #config.Data.allowNonValidInputDataset = False
 config.JobType.sendExternalFolder     = True
+config.JobType.allowUndistributedCMSSW = True
 
 config.Data.inputDBS = 'global'
 config.Data.publication = False
 config.Data.allowNonValidInputDataset = True
 #config.Data.publishDataName = 
 
-config.Site.storageSite = 'T2_CH_CERN'
+config.Site.storageSite = 'T2_FR_GRIF_LLR'
 
 
  

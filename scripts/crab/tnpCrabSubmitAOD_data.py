@@ -2,28 +2,28 @@ from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 import sys
 config = config()
 
-submitVersion = "ntuple_2017"
+submitVersion ="2019_1_15"
 
 doEleTree = 'doEleID=True'
 doPhoTree = 'doPhoID=True'
 doHLTTree = 'doTrigger=False'
 doRECO    = 'doRECO=False'
 
-mainOutputDir = '/store/group/phys_egamma/swmukher/%s' % submitVersion
+mainOutputDir = '/store/user/dgiljano/TnP/2017_data_MC/%s' % submitVersion
 
 config.General.transferLogs = False
 
 config.JobType.pluginName  = 'Analysis'
 
 # Name of the CMSSW configuration file
-config.JobType.psetName  = '/afs/cern.ch/user/s/swmukher/work/NtupleProd_2017/CMSSW_10_2_5/src/EgammaAnalysis/TnPTreeProducer/python/TnPTreeProducer_cfg.py'
+config.JobType.psetName  = '/scratch/giljanovic/CMSSW_10_2_9/src/EgammaAnalysis/TnPTreeProducer/python/TnPTreeProducer_cfg.py'
 config.Data.allowNonValidInputDataset = False
 
 config.Data.inputDBS = 'global'
 config.Data.publication = False
 
 #config.Data.publishDataName = 
-config.Site.storageSite = 'T2_CH_CERN'
+config.Site.storageSite = 'T2_FR_GRIF_LLR'
 
 
 if __name__ == '__main__':
