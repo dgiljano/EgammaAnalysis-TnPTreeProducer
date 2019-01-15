@@ -5,7 +5,7 @@ config = config()
 submitVersion ="2019_1_15"
 
 doEleTree = 'doEleID=True'
-doPhoTree = 'doPhoID=True'
+doPhoTree = 'doPhoID=False'
 doHLTTree = 'doTrigger=False'
 doRECO    = 'doRECO=False'
 
@@ -25,6 +25,7 @@ config.Data.publication = False
 #config.Data.publishDataName = 
 config.Site.storageSite = 'T2_FR_GRIF_LLR'
 
+config.JobType.allowUndistributedCMSSW = True
 
 if __name__ == '__main__':
 
@@ -49,20 +50,21 @@ if __name__ == '__main__':
     config.Data.outLFNDirBase = '%s/%s/' % (mainOutputDir,'mc')
     config.Data.splitting     = 'FileBased'
     config.Data.unitsPerJob   = 20
-    config.JobType.pyCfgParams  = ['isMC=True','isAOD=True',doEleTree,doPhoTree,doHLTTree,doRECO]
+    config.JobType.pyCfgParams  = ['isMC=True','isAOD=False',doEleTree,doPhoTree,doHLTTree,doRECO]
 
 
-#    config.General.requestName  = 'DY1JetsToLL_M50_madgraphMLM'
-#    config.Data.inputDataset    = '/DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM'
-#    submit(config) 
-
-    config.General.requestName  = 'DY1JetsToLL_M50_madgraphMLM_ext1'
-    config.Data.inputDataset    = '/DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11_ext1-v1/AODSIM'
+    config.General.requestName  = 'DY1JetsToLL_M50_madgraphMLM'
+    config.Data.inputDataset    = '/DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAOD-PU2017-94X_mc2017_realistic_v11-v1/MINIAODSIM'
     submit(config) 
 
-#    config.General.requestName  = 'DYJetsToLL_M50_amcatnloFXFX'
+    config.General.requestName  = 'DY1JetsToLL_M50_madgraphMLM_ext1'
+    config.Data.inputDataset    = '/DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAOD-PU2017_94X_mc2017_realistic_v11_ext1-v1/MINIAODSIM'
+    submit(config) 
+
+    config.General.requestName  = 'DYJetsToLL_M50_amcatnloFXFX'
 #    config.Data.inputDataset    = '/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM'
-#    submit(config) 
+    config.Data.inputDataset    = '/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM'
+    submit(config) 
 
 
 

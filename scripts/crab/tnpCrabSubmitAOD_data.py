@@ -5,7 +5,7 @@ config = config()
 submitVersion ="2019_1_15"
 
 doEleTree = 'doEleID=True'
-doPhoTree = 'doPhoID=True'
+doPhoTree = 'doPhoID=False'
 doHLTTree = 'doTrigger=False'
 doRECO    = 'doRECO=False'
 
@@ -25,6 +25,7 @@ config.Data.publication = False
 #config.Data.publishDataName = 
 config.Site.storageSite = 'T2_FR_GRIF_LLR'
 
+config.JobType.allowUndistributedCMSSW = True
 
 if __name__ == '__main__':
 
@@ -50,27 +51,27 @@ if __name__ == '__main__':
     config.Data.splitting     = 'LumiBased'
     config.Data.lumiMask      = 'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions17/13TeV/Final/Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt'
     config.Data.unitsPerJob   = 90
-    config.JobType.pyCfgParams  = ['isMC=False','isAOD=True',doEleTree,doPhoTree,doHLTTree,doRECO,'GT=94X_dataRun2_ReReco_EOY17_v6']
+    config.JobType.pyCfgParams  = ['isMC=False','isAOD=False',doEleTree,doPhoTree,doHLTTree,doRECO,'GT=94X_dataRun2_ReReco_EOY17_v6']
 
-#    config.General.requestName  = 'RunB_2017'
-#    config.Data.inputDataset    = '/SingleElectron/Run2017B-17Nov2017-v1/AOD'
-#    submit(config)
-
-    config.General.requestName  = 'RunC_2017_retry'
-    config.Data.inputDataset    = '/SingleElectron/Run2017C-17Nov2017-v1/AOD'
+    config.General.requestName  = 'RunB_2017'
+    config.Data.inputDataset    = '/SingleElectron/Run2017B-17Nov2017-v1/MINIAOD'
     submit(config)
 
-#    config.General.requestName  = 'RunD_2017'
-#    config.Data.inputDataset    = '/SingleElectron/Run2017D-17Nov2017-v1/AOD'
-#    submit(config)
+    config.General.requestName  = 'RunC_2017_retry'
+    config.Data.inputDataset    = '/SingleElectron/Run2017C-17Nov2017-v1/MINIAOD'
+    submit(config)
 
-#    config.General.requestName  = 'RunE_2017_retry'
-#    config.Data.inputDataset    = '/SingleElectron/Run2017E-17Nov2017-v1/AOD'
-#    submit(config)
+    config.General.requestName  = 'RunD_2017'
+    config.Data.inputDataset    = '/SingleElectron/Run2017D-17Nov2017-v1/AODMINI'
+    submit(config)
 
-#    config.General.requestName  = 'RunF_2017'
-#    config.Data.inputDataset    = '/SingleElectron/Run2017F-17Nov2017-v1/AOD'
-#    submit(config)
+    config.General.requestName  = 'RunE_2017_retry'
+    config.Data.inputDataset    = '/SingleElectron/Run2017E-17Nov2017-v1/MINIAOD'
+    submit(config)
+
+    config.General.requestName  = 'RunF_2017'
+    config.Data.inputDataset    = '/SingleElectron/Run2017F-17Nov2017-v1/MINIAOD'
+    submit(config)
 
 
 
