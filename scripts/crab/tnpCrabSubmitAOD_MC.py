@@ -2,7 +2,7 @@ from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 import sys
 config = config()
 
-submitVersion ="2019_1_15"
+submitVersion ="2019_1_29"
 
 doEleTree = 'doEleID=True'
 doPhoTree = 'doPhoID=False'
@@ -53,12 +53,12 @@ if __name__ == '__main__':
     config.JobType.pyCfgParams  = ['isMC=True','isAOD=False',doEleTree,doPhoTree,doHLTTree,doRECO]
 
 
-    config.General.requestName  = 'DY1JetsToLL_M50_madgraphMLM'
-    config.Data.inputDataset    = '/DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAOD-PU2017-94X_mc2017_realistic_v11-v1/MINIAODSIM'
+    config.General.requestName  = 'DYJetsToLL_M50_madgraphMLM'
+    config.Data.inputDataset    = '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAOD-RECOSIMstep_94X_mc2017_realistic_v10-v1/MINIAODSIM'
     submit(config) 
 
-    config.General.requestName  = 'DY1JetsToLL_M50_madgraphMLM_ext1'
-    config.Data.inputDataset    = '/DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAOD-PU2017_94X_mc2017_realistic_v11_ext1-v1/MINIAODSIM'
+    config.General.requestName  = 'DYJetsToLL_M50_madgraphMLM_ext1'
+    config.Data.inputDataset    = '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAOD-RECOSIMstep_94X_mc2017_realistic_v10_ext1-v1/MINIAODSIM'
     submit(config) 
 
     config.General.requestName  = 'DYJetsToLL_M50_amcatnloFXFX'
@@ -66,6 +66,3 @@ if __name__ == '__main__':
     config.Data.inputDataset    = '/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM'
     submit(config) 
 
-
-
-    
